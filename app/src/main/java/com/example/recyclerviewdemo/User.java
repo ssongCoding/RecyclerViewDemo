@@ -1,9 +1,16 @@
 package com.example.recyclerviewdemo;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 /**
  * Item 각 요소에 담을 객체
  */
+@Entity
 public class User {
+    @PrimaryKey(autoGenerate = true)
+    private int key = 0; // Primary Key
+
     private String profile;
     private String id;
     private String userName;
@@ -12,6 +19,14 @@ public class User {
     public User(String id, String userName){
         this.id = id;
         this.userName = userName;
+    }
+
+    public int getKey() {
+        return key;
+    }
+
+    public void setKey(int key) {
+        this.key = key;
     }
 
     // Alt + Insert
